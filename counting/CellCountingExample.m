@@ -4,6 +4,10 @@
 %
 %Code copyright: Victor Lempitsky, 2011
 
+% Run `run('VLFEATROOT/toolbox/vl_setup')` where VLFEATROOT is the
+% directory you installed vlfeat to, to get MATLAB to recognise VLFeat
+% To check that VLFeat is sucessfully installed,run `vl_version verbose`
+
 clear all;
 disp('LEARNING TO COUNT CELLS IN MICROSCOPY IMAGES');
 disp('----------');
