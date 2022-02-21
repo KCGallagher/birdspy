@@ -18,11 +18,13 @@ class BirdImage:
         self.image = Image.open(file_loc)
         self.data = np.array(self.image)
 
-    def print(self):
+    def print(self, save_loc = ""):
+        """Plots image object, with optional argument to save image"""
         plt.imshow(self.data, interpolation='nearest')
+        axs = plt.gca()
+        axs.axes.xaxis.set_visible(False), axs.yaxis.set_visible(False)
+        plt.axis('off')
+        if save_loc != "":
+            plt.savefig(save_loc)
         plt.show()
 
-im = BirdImage("images/HVITa_zooniverse/HVITa2016a_zooniverse/HVITa2016a_000006.JPG")
-print(im.file_loc)
-print(im.data.shape)
-im.print()
