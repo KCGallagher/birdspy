@@ -39,3 +39,20 @@ images/**
 
 # Annotation data
 annotations/**
+
+# MATLAB
+
+# Compiled MEX binaries (all platforms)
+*.mex*
+
+# Windows default autosave extension
+*.asv
+
+# Matlab code generation folders
+codegen/
+
+# Simulink autosave extension
+*.autosave
+
+# Simulink cache files
+*.slxc
