@@ -23,7 +23,7 @@ class BirdImage:
         self.pixel_size = (self.data.shape[1], self.data.shape[0])
         self.annotations = []
 
-    def print(self, save_loc: str = "", my_dpi: int = 96):
+    def print(self, use_annotations: bool = False, save_loc: str = "", my_dpi: int = 96):
         """Plots image object, with optional argument to save image. However,
         the separate save() methiod should be used for high quality images."""
         fig = plt.figure(figsize=(self.pixel_size[0] / my_dpi, 
@@ -32,6 +32,9 @@ class BirdImage:
         axs = fig.add_subplot()
 
         axs.imshow(self.data, interpolation='nearest')
+        if use_annotations:
+            self.plot_annotations(axs)
+
         axs.axes.xaxis.set_visible(False), axs.yaxis.set_visible(False)
         plt.axis('off')
 
@@ -61,14 +64,7 @@ class BirdImage:
         df_img = df.loc[df["image_id"] == image]
         self.annotations += df_img[["cluster_x", "cluster_y"]].values.tolist()
 
-    def plot_annotations(self, rgb_value = np.array([255, 0, 0]), size = 1):
+    def plot_annotations(self, ax, rgb_value = np.array([1, 0, 0]), size = 6):
         for point in self.annotations:
-            self.data[int(point[1])][int(point[0])] = rgb_value
-
-
-im = BirdImage("images/HVITa_renamed/HVITa2016a_renamed/HVITa2016a_000006.JPG")
-im.get_annotations()
-im.plot_annotations()
-im.print()
-
-print(im.data[100][100])
+            ax.plot(int(point[0]), int(point[1]), "o",
+                    markersize  = size, color = rgb_value, )
