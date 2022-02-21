@@ -29,7 +29,7 @@ However, I have retained these images to help avoid the model over-counting, and
 
 ### Maintain Consistency
 
-We subselect the year 2016 - the majority of our dataset was from this year anyway so we only lose <3% of the data. This is because a different camera was used in subsequent years, with a different aspect ratio, and so I wanted to avoid having to convert between the two image types, however this would be necessary for a larger scale model.
+We subselect the year 2016 - the majority of our dataset was from this year anyway so we only lose <2% of the data. This is because a different camera was used in subsequent years, with a different aspect ratio, and so I wanted to avoid having to convert between the two image types, however this would be necessary for a larger scale model.
 
 ```python
 annotation_df = annotation_df.loc[annotation_df['cam_id'].str.startswith('HVITa2016')]

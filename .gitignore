@@ -36,6 +36,7 @@ ipython_config.py
 
 # Image directories
 images/**
+counting_birds/data/**
 
 # Annotation data
 annotations/**

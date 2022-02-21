@@ -6,3 +6,4 @@
 """
 
 from .image_analysis import BirdImage
+from .image_factory import ImageFactory
