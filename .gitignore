@@ -36,3 +36,6 @@ ipython_config.py
 
 # Image directories
 images/**
+
+# Annotation data
+annotations/**
