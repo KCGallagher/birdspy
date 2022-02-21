@@ -55,19 +55,3 @@ class ImageFactory:
         else:
             annotation_path = "annotations/HVITa_goldstandard_kadult.csv"
         return pd.read_csv(annotation_path)
-
-ImageFactory.ground_truth_factory("counting_birds/data/")
-# 
-#  img = Image.open("counting_example/data/001dots.png")
-# data = np.array(img)
-# print(np.count_nonzero(data))
-# print(np.sum(data))
-
-
-
-# a_file = open("test.txt", "w")
-# for row in data:
-#     np.savetxt(a_file, row)
-# a_file.close()
-
-# positve values are [255, 0, 0]
