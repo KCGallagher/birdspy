@@ -2,9 +2,12 @@
 # Functions used for image analysis
 # 
 
-from PIL import Image
+from __future__ import annotations
+import os
 import numpy as np
+import pandas as pd
 import matplotlib.pyplot as plt
+from PIL import Image
 
 class BirdImage:
     """Image class for visualisation
@@ -42,5 +45,30 @@ class BirdImage:
         im = Image.fromarray(self.data)
         im.save(save_loc)
 
-    def get_annotations(self, file_loc: str):
-        return
+    def get_annotations(self, use_citizens: bool = True):
+        """Obtains pixel wise annotations from citizen science database,
+        for a specified image. If use_citizens = False, will use gold standard 
+        annotations from researcher instead (N.B these are not always avaliable)."""
+
+        image = os.path.basename(self.file_loc)
+
+        if use_citizens:
+            file_path = "annotations/HVITa_citsciConsensus_kadult.csv"
+        else:
+            file_path = "annotations/HVITa_goldstandard_kadult.csv"
+
+        df = pd.read_csv(file_path)
+        df_img = df.loc[df["image_id"] == image]
+        self.annotations += df_img[["cluster_x", "cluster_y"]].values.tolist()
+
+    def plot_annotations(self, rgb_value = np.array([255, 0, 0]), size = 1):
+        for point in self.annotations:
+            self.data[int(point[1])][int(point[0])] = rgb_value
+
+
+im = BirdImage("images/HVITa_renamed/HVITa2016a_renamed/HVITa2016a_000006.JPG")
+im.get_annotations()
+im.plot_annotations()
+im.print()
+
+print(im.data[100][100])
