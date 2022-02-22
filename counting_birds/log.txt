@@ -1,0 +1,200 @@
+>> BirdCounting
+LEARNING TO COUNT BIRDS IN TIME-LAPSE IMAGES
+----------
+Generating Initial Weights
+----------
+Loading features precomputed at previous run
+Mexifying MaxSubarray procedure
+Building with 'MinGW64 Compiler (C++)'.
+MEX completed successfully.
+Now using the first 16 images to train the model.
+--------------
+Training the model with L1 regularization:
+--------------
+L1 regularization is used.
+Non-negative feature encoding assumed. w is constrained to be non-negative.
+Starting iteration 1
+
+Optimal solution found.
+
+Convex program (re)solved. Generating constraints...
+Statistics for image 1: True count: 40.3; Estimated count: 57.8; MESA-distance: 19.4; Previous slack: 6.0
+Showing the GT density, the estimated density, the diff and the most violated constraint
+Starting iteration 2
+
+Optimal solution found.
+
+Convex program (re)solved. Generating constraints...
+Statistics for image 1: True count: 40.3; Estimated count: 41.3; MESA-distance: 14.7; Previous slack: 3.1
+Showing the GT density, the estimated density, the diff and the most violated constraint
+Starting iteration 3
+
+Optimal solution found.
+
+Convex program (re)solved. Generating constraints...
+Statistics for image 1: True count: 40.3; Estimated count: 49.9; MESA-distance: 15.1; Previous slack: 11.3
+Showing the GT density, the estimated density, the diff and the most violated constraint
+Starting iteration 4
+
+Optimal solution found.
+
+Convex program (re)solved. Generating constraints...
+Statistics for image 1: True count: 40.3; Estimated count: 51.0; MESA-distance: 13.2; Previous slack: 12.5
+Showing the GT density, the estimated density, the diff and the most violated constraint
+Starting iteration 5
+
+Optimal solution found.
+
+Convex program (re)solved. Generating constraints...
+Statistics for image 1: True count: 40.3; Estimated count: 48.7; MESA-distance: 13.1; Previous slack: 12.4
+Showing the GT density, the estimated density, the diff and the most violated constraint
+Starting iteration 6
+
+Optimal solution found.
+
+Convex program (re)solved. Generating constraints...
+Starting iteration 7
+
+Optimal solution found.
+
+Convex program (re)solved. Generating constraints...
+Starting iteration 8
+
+Optimal solution found.
+
+Convex program (re)solved. Generating constraints...
+Statistics for image 1: True count: 40.3; Estimated count: 49.9; MESA-distance: 12.7; Previous slack: 12.5
+Showing the GT density, the estimated density, the diff and the most violated constraint
+Starting iteration 9
+
+Optimal solution found.
+
+Convex program (re)solved. Generating constraints...
+Statistics for image 1: True count: 40.3; Estimated count: 50.0; MESA-distance: 12.0; Previous slack: 11.8
+Showing the GT density, the estimated density, the diff and the most violated constraint
+Starting iteration 10
+
+Optimal solution found.
+
+Convex program (re)solved. Generating constraints...
+Constraint generation successfully converged
+--------------
+Training the model with Tikhonov regularization:
+--------------
+Tikhonov regularization is used.
+Non-negative feature encoding assumed. w is constrained to be non-negative.
+Starting iteration 1
+
+Minimum found that satisfies the constraints.
+
+Optimization completed because the objective function is non-decreasing in 
+feasible directions, to within the value of the optimality tolerance,
+and constraints are satisfied to within the value of the constraint tolerance.
+
+<stopping criteria details>
+Convex program (re)solved. Generating constraints...
+Statistics for image 1: True count: 40.3; Estimated count: 71.2; MESA-distance: 32.5; Previous slack: 4.5
+Showing the GT density, the estimated density, the diff and the most violated constraint
+Starting iteration 2
+The interior-point-convex algorithm does not accept an initial point.
+Ignoring X0.
+
+Minimum found that satisfies the constraints.
+
+Optimization completed because the objective function is non-decreasing in 
+feasible directions, to within the value of the optimality tolerance,
+and constraints are satisfied to within the value of the constraint tolerance.
+
+<stopping criteria details>
+Convex program (re)solved. Generating constraints...
+Statistics for image 1: True count: 40.3; Estimated count: 43.1; MESA-distance: 13.7; Previous slack: 4.8
+Showing the GT density, the estimated density, the diff and the most violated constraint
+Starting iteration 3
+The interior-point-convex algorithm does not accept an initial point.
+Ignoring X0.
+
+Minimum found that satisfies the constraints.
+
+Optimization completed because the objective function is non-decreasing in 
+feasible directions, to within the value of the optimality tolerance,
+and constraints are satisfied to within the value of the constraint tolerance.
+
+<stopping criteria details>
+Convex program (re)solved. Generating constraints...
+Statistics for image 1: True count: 40.3; Estimated count: 48.8; MESA-distance: 13.4; Previous slack: 10.8
+Showing the GT density, the estimated density, the diff and the most violated constraint
+Starting iteration 4
+The interior-point-convex algorithm does not accept an initial point.
+Ignoring X0.
+
+Minimum found that satisfies the constraints.
+
+Optimization completed because the objective function is non-decreasing in 
+feasible directions, to within the value of the optimality tolerance,
+and constraints are satisfied to within the value of the constraint tolerance.
+
+<stopping criteria details>
+Convex program (re)solved. Generating constraints...
+Statistics for image 1: True count: 40.3; Estimated count: 48.5; MESA-distance: 11.7; Previous slack: 10.4
+Showing the GT density, the estimated density, the diff and the most violated constraint
+Starting iteration 5
+The interior-point-convex algorithm does not accept an initial point.
+Ignoring X0.
+
+Minimum found that satisfies the constraints.
+
+Optimization completed because the objective function is non-decreasing in 
+feasible directions, to within the value of the optimality tolerance,
+and constraints are satisfied to within the value of the constraint tolerance.
+
+<stopping criteria details>
+Convex program (re)solved. Generating constraints...
+Statistics for image 1: True count: 40.3; Estimated count: 49.5; MESA-distance: 12.0; Previous slack: 11.2
+Showing the GT density, the estimated density, the diff and the most violated constraint
+Starting iteration 6
+The interior-point-convex algorithm does not accept an initial point.
+Ignoring X0.
+
+Minimum found that satisfies the constraints.
+
+Optimization completed because the objective function is non-decreasing in 
+feasible directions, to within the value of the optimality tolerance,
+and constraints are satisfied to within the value of the constraint tolerance.
+
+<stopping criteria details>
+Convex program (re)solved. Generating constraints...
+Statistics for image 1: True count: 40.3; Estimated count: 49.4; MESA-distance: 11.9; Previous slack: 11.2
+Showing the GT density, the estimated density, the diff and the most violated constraint
+Starting iteration 7
+The interior-point-convex algorithm does not accept an initial point.
+Ignoring X0.
+
+Minimum found that satisfies the constraints.
+
+Optimization completed because the objective function is non-decreasing in 
+feasible directions, to within the value of the optimality tolerance,
+and constraints are satisfied to within the value of the constraint tolerance.
+
+<stopping criteria details>
+Convex program (re)solved. Generating constraints...
+Statistics for image 1: True count: 40.3; Estimated count: 49.3; MESA-distance: 11.6; Previous slack: 11.3
+Showing the GT density, the estimated density, the diff and the most violated constraint
+Starting iteration 8
+The interior-point-convex algorithm does not accept an initial point.
+Ignoring X0.
+
+Minimum found that satisfies the constraints.
+
+Optimization completed because the objective function is non-decreasing in 
+feasible directions, to within the value of the optimality tolerance,
+and constraints are satisfied to within the value of the constraint tolerance.
+
+<stopping criteria details>
+Convex program (re)solved. Generating constraints...
+Constraint generation successfully converged
+Now evaluating on the remaining 16 images
+Image #4: trueCount = 52.868061, model1 predicted count = 48.867941, model2 predicted count = 50.748037...
+--------------
+Model 1 (L1) average error = 4.000120,
+Model 2 (Tikhonov) average error = 2.120024
+>> 
