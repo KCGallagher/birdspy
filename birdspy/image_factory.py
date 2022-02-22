@@ -42,7 +42,7 @@ class ImageFactory:
     @staticmethod
     def write_truth_image(annotations: List):
         """Generate array from truth image from list of annotation points"""
-        img_shape = (1080, 1920, 3)  # All images in uncompressed datasize are this size
+        img_shape = (1080, 1920, 3)  # All 2016 images in uncompressed datasize are this size
         img = np.zeros(img_shape, dtype=np.uint8)
         if np.isnan(annotations).any():
             return img  # No birds in image
