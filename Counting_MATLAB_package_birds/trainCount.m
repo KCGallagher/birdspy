@@ -1,7 +1,6 @@
 function [b, dict] = trainCount(d,trainData)
 
 nFrames = size(trainData,1);
-
 if ~exist(fullfile(d.exppath,['dict_' num2str(d.dictSize) '.mat']),'file')
   posSamples = cell(1,nFrames);
   negSamples = cell(1,nFrames);

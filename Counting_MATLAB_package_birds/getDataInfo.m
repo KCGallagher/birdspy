@@ -11,8 +11,8 @@ if ~exist(d.exppath,'dir')
 end
 
 %---------------------------------------------------------Input Information
-d.objSize = 15; %Rough size of the object in the input images
-d.imExt = 'png'; %image extension, png, jpg, etc...
+d.objSize = 35; %Rough size of the object in the input images
+d.imExt = 'jpg'; %image extension, png, jpg, etc...
 
 %------------------------------------------------------------Output options
 %save density maps in original resolution
