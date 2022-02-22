@@ -13,7 +13,7 @@ disp('LEARNING TO COUNT BIRDS IN TIME-LAPSE IMAGES');
 disp('----------');
 
 disp('Generating Initial Weights');
-Dict = randi(20, 128, 1080, 'int32'); 
+Dict = randi(20, 128, 1920, 'int32'); 
 
 features = cell(32,1);
 weights = cell(32,1);
@@ -71,7 +71,7 @@ trainWeights = weights(1:nTrain);
 trainGtDensities = gtDensities(1:nTrain);
 
 disp('Now using the first 16 images to train the model.');
-nFeatures = 1080;
+nFeatures = 1920;
 maxIter = 100;
 verbose = true;
 weightMap = ones([size(features{1},1) size(features{1},2)]);
