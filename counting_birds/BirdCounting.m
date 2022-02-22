@@ -29,7 +29,7 @@ if exist('features_BIRD_IMAGES.mat')
     disp('Loading features precomputed at previous run');
     load('features_BIRD_IMAGES.mat','features','weights','gtDensities');
 else
-    for j=1:4 %change4_32
+    for j=1:8 %change8_32
         disp(['Processing image #' num2str(j) ' (out of 32)...']);
         im = imread(['data/HVITa2016a_' num2str(j, '%06d') '.jpg']);
         im = im(:,:,3); %using the blue channel to compute data
@@ -65,7 +65,7 @@ end
 disp('Mexifying MaxSubarray procedure');
 mex maxsubarray2D.cpp
 
-nTrain = 3; %change3_16
+nTrain = 4; %change4_16
 trainFeatures = features(1:nTrain);
 trainWeights = weights(1:nTrain);
 trainGtDensities = gtDensities(1:nTrain);
@@ -88,16 +88,16 @@ disp('--------------');
 wL2 = LearnToCount(nFeatures, trainFeatures, trainWeights, ...
         weightMap, trainGtDensities, 0.01/nTrain, maxIter, verbose);
 
-trueCount = zeros(4-nTrain,1);  %change4_32
-model1Count = zeros(4-nTrain,1);
-model2Count = zeros(4-nTrain,1);
+trueCount = zeros(8-nTrain,1);  %change8_32
+model1Count = zeros(8-nTrain,1);
+model2Count = zeros(8-nTrain,1);
 
 disp('Now evaluating on the remaining 16 images');
 testFeatures = features(nTrain+1:end);
 testWeights = weights(nTrain+1:end);
 testGtDensities = gtDensities(nTrain+1:end);
 
-for j=1:4-nTrain %change4_32
+for j=1:8-nTrain %change8_32
    trueCount(j) = sum(testGtDensities{j}(:));
    
    %estimating the densities w.r.t. the models

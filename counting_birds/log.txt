@@ -3,7 +3,38 @@ LEARNING TO COUNT BIRDS IN TIME-LAPSE IMAGES
 ----------
 Generating Initial Weights
 ----------
-Loading features precomputed at previous run
+Processing image #1 (out of 32)...
+Computing dense SIFT...
+Quantizing SIFTs...
+----------
+Processing image #2 (out of 32)...
+Computing dense SIFT...
+Quantizing SIFTs...
+----------
+Processing image #3 (out of 32)...
+Computing dense SIFT...
+Quantizing SIFTs...
+----------
+Processing image #4 (out of 32)...
+Computing dense SIFT...
+Quantizing SIFTs...
+----------
+Processing image #5 (out of 32)...
+Computing dense SIFT...
+Quantizing SIFTs...
+----------
+Processing image #6 (out of 32)...
+Computing dense SIFT...
+Quantizing SIFTs...
+----------
+Processing image #7 (out of 32)...
+Computing dense SIFT...
+Quantizing SIFTs...
+----------
+Processing image #8 (out of 32)...
+Computing dense SIFT...
+Quantizing SIFTs...
+----------
 Mexifying MaxSubarray procedure
 Building with 'MinGW64 Compiler (C++)'.
 MEX completed successfully.
@@ -18,59 +49,63 @@ Starting iteration 1
 Optimal solution found.
 
 Convex program (re)solved. Generating constraints...
-Statistics for image 1: True count: 40.3; Estimated count: 57.8; MESA-distance: 19.4; Previous slack: 6.0
+Statistics for image 1: True count: 40.3; Estimated count: 44.7; MESA-distance: 14.8; Previous slack: 0.5
 Showing the GT density, the estimated density, the diff and the most violated constraint
 Starting iteration 2
 
 Optimal solution found.
 
 Convex program (re)solved. Generating constraints...
-Statistics for image 1: True count: 40.3; Estimated count: 41.3; MESA-distance: 14.7; Previous slack: 3.1
+Statistics for image 1: True count: 40.3; Estimated count: 89.6; MESA-distance: 52.2; Previous slack: 1.0
 Showing the GT density, the estimated density, the diff and the most violated constraint
 Starting iteration 3
 
 Optimal solution found.
 
 Convex program (re)solved. Generating constraints...
-Statistics for image 1: True count: 40.3; Estimated count: 49.9; MESA-distance: 15.1; Previous slack: 11.3
+Statistics for image 1: True count: 40.3; Estimated count: 51.3; MESA-distance: 13.7; Previous slack: 10.6
 Showing the GT density, the estimated density, the diff and the most violated constraint
 Starting iteration 4
 
 Optimal solution found.
 
 Convex program (re)solved. Generating constraints...
-Statistics for image 1: True count: 40.3; Estimated count: 51.0; MESA-distance: 13.2; Previous slack: 12.5
+Statistics for image 1: True count: 40.3; Estimated count: 51.4; MESA-distance: 13.6; Previous slack: 12.1
 Showing the GT density, the estimated density, the diff and the most violated constraint
 Starting iteration 5
 
 Optimal solution found.
 
 Convex program (re)solved. Generating constraints...
-Statistics for image 1: True count: 40.3; Estimated count: 48.7; MESA-distance: 13.1; Previous slack: 12.4
+Statistics for image 1: True count: 40.3; Estimated count: 50.4; MESA-distance: 13.2; Previous slack: 12.1
 Showing the GT density, the estimated density, the diff and the most violated constraint
 Starting iteration 6
 
 Optimal solution found.
 
 Convex program (re)solved. Generating constraints...
+Statistics for image 1: True count: 40.3; Estimated count: 50.9; MESA-distance: 12.7; Previous slack: 12.2
+Showing the GT density, the estimated density, the diff and the most violated constraint
 Starting iteration 7
 
 Optimal solution found.
 
 Convex program (re)solved. Generating constraints...
+Statistics for image 1: True count: 40.3; Estimated count: 50.2; MESA-distance: 12.4; Previous slack: 12.0
+Showing the GT density, the estimated density, the diff and the most violated constraint
 Starting iteration 8
 
 Optimal solution found.
 
 Convex program (re)solved. Generating constraints...
-Statistics for image 1: True count: 40.3; Estimated count: 49.9; MESA-distance: 12.7; Previous slack: 12.5
+Statistics for image 1: True count: 40.3; Estimated count: 50.6; MESA-distance: 12.4; Previous slack: 12.2
 Showing the GT density, the estimated density, the diff and the most violated constraint
 Starting iteration 9
 
 Optimal solution found.
 
 Convex program (re)solved. Generating constraints...
-Statistics for image 1: True count: 40.3; Estimated count: 50.0; MESA-distance: 12.0; Previous slack: 11.8
+Statistics for image 1: True count: 40.3; Estimated count: 51.1; MESA-distance: 12.6; Previous slack: 12.5
 Showing the GT density, the estimated density, the diff and the most violated constraint
 Starting iteration 10
 
@@ -93,7 +128,7 @@ and constraints are satisfied to within the value of the constraint tolerance.
 
 <stopping criteria details>
 Convex program (re)solved. Generating constraints...
-Statistics for image 1: True count: 40.3; Estimated count: 71.2; MESA-distance: 32.5; Previous slack: 4.5
+Statistics for image 1: True count: 40.3; Estimated count: 66.9; MESA-distance: 28.3; Previous slack: 0.4
 Showing the GT density, the estimated density, the diff and the most violated constraint
 Starting iteration 2
 The interior-point-convex algorithm does not accept an initial point.
@@ -107,7 +142,7 @@ and constraints are satisfied to within the value of the constraint tolerance.
 
 <stopping criteria details>
 Convex program (re)solved. Generating constraints...
-Statistics for image 1: True count: 40.3; Estimated count: 43.1; MESA-distance: 13.7; Previous slack: 4.8
+Statistics for image 1: True count: 40.3; Estimated count: 40.6; MESA-distance: 15.1; Previous slack: 3.6
 Showing the GT density, the estimated density, the diff and the most violated constraint
 Starting iteration 3
 The interior-point-convex algorithm does not accept an initial point.
@@ -121,7 +156,7 @@ and constraints are satisfied to within the value of the constraint tolerance.
 
 <stopping criteria details>
 Convex program (re)solved. Generating constraints...
-Statistics for image 1: True count: 40.3; Estimated count: 48.8; MESA-distance: 13.4; Previous slack: 10.8
+Statistics for image 1: True count: 40.3; Estimated count: 51.2; MESA-distance: 13.9; Previous slack: 11.8
 Showing the GT density, the estimated density, the diff and the most violated constraint
 Starting iteration 4
 The interior-point-convex algorithm does not accept an initial point.
@@ -135,7 +170,7 @@ and constraints are satisfied to within the value of the constraint tolerance.
 
 <stopping criteria details>
 Convex program (re)solved. Generating constraints...
-Statistics for image 1: True count: 40.3; Estimated count: 48.5; MESA-distance: 11.7; Previous slack: 10.4
+Statistics for image 1: True count: 40.3; Estimated count: 50.6; MESA-distance: 13.5; Previous slack: 12.1
 Showing the GT density, the estimated density, the diff and the most violated constraint
 Starting iteration 5
 The interior-point-convex algorithm does not accept an initial point.
@@ -149,7 +184,7 @@ and constraints are satisfied to within the value of the constraint tolerance.
 
 <stopping criteria details>
 Convex program (re)solved. Generating constraints...
-Statistics for image 1: True count: 40.3; Estimated count: 49.5; MESA-distance: 12.0; Previous slack: 11.2
+Statistics for image 1: True count: 40.3; Estimated count: 50.3; MESA-distance: 12.8; Previous slack: 12.2
 Showing the GT density, the estimated density, the diff and the most violated constraint
 Starting iteration 6
 The interior-point-convex algorithm does not accept an initial point.
@@ -163,7 +198,7 @@ and constraints are satisfied to within the value of the constraint tolerance.
 
 <stopping criteria details>
 Convex program (re)solved. Generating constraints...
-Statistics for image 1: True count: 40.3; Estimated count: 49.4; MESA-distance: 11.9; Previous slack: 11.2
+Statistics for image 1: True count: 40.3; Estimated count: 50.6; MESA-distance: 12.5; Previous slack: 12.3
 Showing the GT density, the estimated density, the diff and the most violated constraint
 Starting iteration 7
 The interior-point-convex algorithm does not accept an initial point.
@@ -177,7 +212,7 @@ and constraints are satisfied to within the value of the constraint tolerance.
 
 <stopping criteria details>
 Convex program (re)solved. Generating constraints...
-Statistics for image 1: True count: 40.3; Estimated count: 49.3; MESA-distance: 11.6; Previous slack: 11.3
+Statistics for image 1: True count: 40.3; Estimated count: 50.6; MESA-distance: 12.6; Previous slack: 12.4
 Showing the GT density, the estimated density, the diff and the most violated constraint
 Starting iteration 8
 The interior-point-convex algorithm does not accept an initial point.
@@ -191,10 +226,24 @@ and constraints are satisfied to within the value of the constraint tolerance.
 
 <stopping criteria details>
 Convex program (re)solved. Generating constraints...
+Starting iteration 9
+The interior-point-convex algorithm does not accept an initial point.
+Ignoring X0.
+
+Minimum found that satisfies the constraints.
+
+Optimization completed because the objective function is non-decreasing in 
+feasible directions, to within the value of the optimality tolerance,
+and constraints are satisfied to within the value of the constraint tolerance.
+
+<stopping criteria details>
+Convex program (re)solved. Generating constraints...
 Constraint generation successfully converged
 Now evaluating on the remaining 16 images
-Image #4: trueCount = 52.868061, model1 predicted count = 48.867941, model2 predicted count = 50.748037...
+Image #5: trueCount = 50.329311, model1 predicted count = 46.117604, model2 predicted count = 48.108858...
+Image #6: trueCount = 8.694118, model1 predicted count = 40.850961, model2 predicted count = 44.418391...
+Image #7: trueCount = 38.725490, model1 predicted count = 50.573239, model2 predicted count = 76.181159...
+Image #8: trueCount = 30.874510, model1 predicted count = 62.014862, model2 predicted count = 89.453247...
 --------------
-Model 1 (L1) average error = 4.000120,
-Model 2 (Tikhonov) average error = 2.120024
->> 
+Model 1 (L1) average error = 19.839163,
+Model 2 (Tikhonov) average error = 33.494783
