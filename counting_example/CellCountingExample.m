@@ -14,6 +14,8 @@ disp('----------');
 
 disp('Loading pre-trained SIFT codebook...');
 load('dictionary256.mat','Dict'); 
+Dict_ones = ones(128, 256, 'int32');
+Dict_rand = randi(20, 128, 256, 'int32');
 
 features = cell(32,1);
 weights = cell(32,1);
@@ -47,7 +49,7 @@ else
         %simple quantized dense SIFT, each image is encoded as MxNx1 numbers of
         %dictionary entries numbers with weight 1 (see the NIPS paper):
         disp('Quantizing SIFTs...');
-        features{j} = vl_ikmeanspush(uint8(d),Dict);
+        features{j} = vl_ikmeanspush(uint8(d),Dict_rand);
         features{j} = reshape(features{j}, maxy-miny+1, maxx-minx+1);
         weights{j} = ones(size(features{j}));    
 
