@@ -9,7 +9,7 @@
 % To check that VLFeat is sucessfully installed,run `vl_version verbose`
 
 clear all;
-disp('LEARNING TO COUNT CELLS IN MICROSCOPY IMAGES');
+disp('LEARNING TO COUNT BIRDS IN TIME-LAPSE IMAGES');
 disp('----------');
 
 disp('Loading pre-trained SIFT codebook...');
