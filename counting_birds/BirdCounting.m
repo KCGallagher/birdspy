@@ -12,8 +12,8 @@ clear all;
 disp('LEARNING TO COUNT BIRDS IN TIME-LAPSE IMAGES');
 disp('----------');
 
-disp('Loading pre-trained SIFT codebook...');
-load('dictionary256.mat','Dict'); 
+disp('Generating Initial Weights');
+Dict = randi(20, 128, 1080, 'int32'); 
 
 features = cell(32,1);
 weights = cell(32,1);
@@ -25,13 +25,13 @@ end
 
 disp('----------');
 
-if exist('features_CELL_IMAGES.mat')
+if exist('features_BIRD_IMAGES.mat')
     disp('Loading features precomputed at previous run');
-    load('features_CELL_IMAGES.mat','features','weights','gtDensities');
+    load('features_BIRD_IMAGES.mat','features','weights','gtDensities');
 else
-    for j=1:32
+    for j=1:8 %change8_32
         disp(['Processing image #' num2str(j) ' (out of 32)...']);
-        im = imread(['data/' num2str(j, '%03d') 'cell.png']);
+        im = imread(['data/HVITa2016a_' num2str(j, '%06d') '.jpg']);
         im = im(:,:,3); %using the blue channel to compute data
 
         disp('Computing dense SIFT...');
@@ -52,26 +52,26 @@ else
         weights{j} = ones(size(features{j}));    
 
         %computing ground truth densities:
-        gtDensities{j} = imread(['data/' num2str(j,'%03d') 'dots.png']);
+        gtDensities{j} = imread(['data/HVITa2016a_' num2str(j, '%06d') '_truth.jpg']);
         gtDensities{j} = double(gtDensities{j}(:,:,1))/255;
         %the following line may be commented out:
         gtDensities{j} = imfilter(gtDensities{j}, fspecial('gaussian', 4.0*6, 4.0));  
         gtDensities{j} = gtDensities{j}(miny:maxy,minx:maxx); %cropping GT densities to match the window where features are computable
         disp('----------');
     end
-    save('features_CELL_IMAGES.mat','features','weights','gtDensities');
+    save('features_BIRD_IMAGES.mat','features','weights','gtDensities');
 end
 
 disp('Mexifying MaxSubarray procedure');
 mex maxsubarray2D.cpp
 
-nTrain = 16;
+nTrain = 4; %change4_16
 trainFeatures = features(1:nTrain);
 trainWeights = weights(1:nTrain);
 trainGtDensities = gtDensities(1:nTrain);
 
 disp('Now using the first 16 images to train the model.');
-nFeatures = 256;
+nFeatures = 1080;
 maxIter = 100;
 verbose = true;
 weightMap = ones([size(features{1},1) size(features{1},2)]);
@@ -88,16 +88,16 @@ disp('--------------');
 wL2 = LearnToCount(nFeatures, trainFeatures, trainWeights, ...
         weightMap, trainGtDensities, 0.01/nTrain, maxIter, verbose);
 
-trueCount = zeros(32-nTrain,1);
-model1Count = zeros(32-nTrain,1);
-model2Count = zeros(32-nTrain,1);
+trueCount = zeros(8-nTrain,1);  %change8_32
+model1Count = zeros(8-nTrain,1);
+model2Count = zeros(8-nTrain,1);
 
 disp('Now evaluating on the remaining 16 images');
 testFeatures = features(nTrain+1:end);
 testWeights = weights(nTrain+1:end);
 testGtDensities = gtDensities(nTrain+1:end);
 
-for j=1:32-nTrain
+for j=1:8-nTrain %change8_32
    trueCount(j) = sum(testGtDensities{j}(:));
    
    %estimating the densities w.r.t. the models
