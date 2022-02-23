@@ -37,9 +37,14 @@ ipython_config.py
 # Image directories
 images/**
 counting_birds/data/**
+Counting_MATLAB_package_birds/bird_data/**
 
 # Annotation data
 annotations/**
+
+# Large Data Files
+counting_birds/features_BIRD_IMAGES*
+
 
 # MATLAB
 
