@@ -3,15 +3,15 @@ function d = getDataInfo(rootpath)
 
 %---------------------------------------------------------------Paths setup
 d.path = rootpath; %root path
-d.datapath = fullfile(rootpath.data,'syntheticCells'); %path to the raw data and annotations
-d.exppath = [d.datapath '/demoOutput']; %path to folder where the results are stored
+d.datapath = fullfile(rootpath.data,'bird_data'); %path to the raw data and annotations
+d.exppath = [d.datapath '/output']; %path to folder where the results are stored
 
 if ~exist(d.exppath,'dir')
   mkdir(d.exppath);
 end
 
 %---------------------------------------------------------Input Information
-d.objSize = 35; %Rough size of the object in the input images
+d.objSize = 45; %Rough size of the object in the input images
 d.imExt = 'jpg'; %image extension, png, jpg, etc...
 
 %------------------------------------------------------------Output options
@@ -19,7 +19,7 @@ d.imExt = 'jpg'; %image extension, png, jpg, etc...
 d.saveDensity = 1;
 
 %Save density segmentation
-d.segment = 0;
+d.segment = 1;
 
 %-------------------------------------------------------------Input options
 %regression
