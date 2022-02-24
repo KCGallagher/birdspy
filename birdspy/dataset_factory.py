@@ -40,7 +40,7 @@ class DatasetFactory:
             shutil.copy(os.path.join(image_path, image), copy_loc)
 
             # Also generate .mat ground truth to go along with the image
-            bs.MatlabInterface.save_truth_mat(image, annotation_df, copy_loc)
+            bs.MatlabInterface.save_truth_mat(image, annotation_df, copy_loc, save_empty_file=True)
     
     def check_image(image_id, annotation_df):
         """Checks whether image is valid, and has annotations,returning validity boolean"""
