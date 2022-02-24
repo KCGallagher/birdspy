@@ -36,7 +36,7 @@ ipython_config.py
 
 # Image directories
 images/**
-counting_birds/data/**
+MESA_distance/data/**
 Counting_MATLAB_package_birds/bird_data/**
 
 # Annotation data

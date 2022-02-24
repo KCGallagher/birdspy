@@ -4,7 +4,9 @@ Deep learning tool for automated detection of artic birds from time-lapse camera
 
 ## CNN Framework
 
-The Convolutional Neural Network (CNN) framework used is that of Victor Lempitsky and Andrew Zisserman, as introduced in their paper [Learning To Count Objects in Images](http://www.robots.ox.ac.uk/~vgg/research/counting/index.html). I have no ownership over this code (in the folder `counting/`) and I am very grateful to them for making it freely accessible.
+The Convolutional Neural Network (CNN) framework used is that of Victor Lempitsky and Andrew Zisserman, as introduced in their paper [Learning To Count Objects in Images](https://www.robots.ox.ac.uk/~vgg/publications/2010/Lempitsky10b/). I have no ownership over this code (in the folder `counting/`) and I am very grateful to them for making it freely accessible.
+
+I include two separate models, based on differing loss functions. The first is based on a MESA-Distance, while the second (which is significantly faster to run) is a simple Ridge Regression. More information is avaliable [here](https://www.robots.ox.ac.uk/~vgg/research/counting/index.html).
 
 ## Installation
 
@@ -16,7 +18,7 @@ pip install -e .
 
 The `-e` flag installs the package in editable mode, so any changes you make to the code will be reflected in the distribution you then run (so re-installation is not necessary).
 
-## Model 1
+## MESA-Distance
 
 Based on code from V. Lempitsky, A. Zisserman, from [Learning To Count Objects in Images](http://www.robots.ox.ac.uk/~vgg/research/counting/index.html).
 
@@ -32,7 +34,7 @@ Generate your dataset using:
 
 ```python
 import birdspy as bs
-bs.ImageFactory.ground_truth_factory("counting_birds/data/")
+bs.ImageFactory.ground_truth_factory("MESA_distance/data/")
 ```
 
 specifying the location you want to read in your data from (this is the default). You can then run the MATLAB script `counting_birds/BirdCounting.m`. It may be necessaary to change the iteration limits and file paths there - the default option trains on the first 16 images and tests on the second 16.
@@ -41,7 +43,7 @@ This script generates the dense SIFT descriptors from a random weighted matrix, 
 
 N.B The learning procedure calls methods from MATLAB's optimization toolbox which are very slow. These can be overloaded by faster solver through installlation of [MOSEK](www.mosek.com)- they are providing free academic licenses at the moment. Since MOSEK supercedes `linprog` and `quadprog` methods, no change in the code is required.
 
-## Model 2
+## Ridge Regression
 
 Based on code from C. Arteta, V. Lempitsky, J. A. Noble, A. Zisserman , from [Interactive Object Counting](https://www.robots.ox.ac.uk/~vgg/publications/2014/Arteta14/).
 
