@@ -31,18 +31,26 @@ class MatlabInterface:
             MatlabInterface.save_truth_mat(image, annotation_df, save_loc)
 
     @staticmethod
-    def save_truth_mat(image_id: str, annotation_df: pd.DataFrame, save_loc: str):
+    def save_truth_mat(image_id: str, annotation_df: pd.DataFrame, save_loc: str, save_empty_file = True):
         """Save truth matrix from image_id, and dataframe of all annotations
         
         In the form of a Nx2 matrix, with (:,1) being the X coordinates 
         and (:,2) the Y coordinates of the annotation dots.
+
+        Option to save empty file if no annotations are present, or return nothing.
         """
         df_img = annotation_df.loc[annotation_df["image_id"] == image_id]
         annotations = df_img[["cluster_x", "cluster_y"]].values
+        if np.isnan(annotations).any():
+            print(f"Nan value in image {image_id}, no truth matrix")
+            if save_empty_file:
+                annotations = []
+            else:
+                return
 
         save_name = str(image_id.split(".")[0]) + ".mat"
         save_path = os.path.join(save_loc, save_name)
         scipy.io.savemat(save_path, {"values": annotations})
 
 
-MatlabInterface.ground_truth_conversion("test/")
+# MatlabInterface.ground_truth_conversion("test/")

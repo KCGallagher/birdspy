@@ -61,5 +61,6 @@ setup(
         # Dependencies go here!
         'matplotlib',
         'numpy>=1.8',
+        'pandas',
     ],
 )
