@@ -10,6 +10,7 @@ from typing import List
 
 import birdspy as bs
 
+
 class MatlabInterface:
     """Class to interface python methods with matlab
     """
@@ -41,6 +42,7 @@ class MatlabInterface:
 
         save_name = str(image_id.split(".")[0]) + ".mat"
         save_path = os.path.join(save_loc, save_name)
-        scipy.io.savemat(save_path, {"values" : annotations})
+        scipy.io.savemat(save_path, {"values": annotations})
 
-#MatlabInterface.ground_truth_conversion("test/")
+
+MatlabInterface.ground_truth_conversion("test/")
