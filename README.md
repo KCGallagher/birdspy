@@ -34,10 +34,10 @@ Generate your dataset using:
 
 ```python
 import birdspy as bs
-bs.ImageFactory.ground_truth_factory("MESA_distance/data/")
+bs.ImageFactory.ground_truth_factory("mesa_distance/data/")
 ```
 
-specifying the location you want to read in your data from (this is the default). You can then run the MATLAB script `MESA_distance/BirdCounting.m`. It may be necessaary to change the iteration limits and file paths there - the default option trains on the first 16 images and tests on the second 16.
+specifying the location you want to read in your data from (this is the default). You can then run the MATLAB script `mesa_distance/BirdCounting.m`. It may be necessaary to change the iteration limits and file paths there - the default option trains on the first 16 images and tests on the second 16.
 
 This script generates the dense SIFT descriptors from a random weighted matrix, but it is preferred to pass a precomputed SIFT codebook for this dataset using VLFeat.
 

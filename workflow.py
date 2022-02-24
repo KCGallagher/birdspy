@@ -8,7 +8,7 @@ import birdspy as bs
 # Model 1
 
 # Save MATLAB ground-truth image files
-# bs.ImageFactory.ground_truth_factory("counting_birds/data/")
+# bs.ImageFactory.ground_truth_factory("mesa_distance/data/")
 
 
 # Model 2
