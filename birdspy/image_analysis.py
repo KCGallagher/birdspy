@@ -78,3 +78,13 @@ class BirdImage:
             ax.plot(int(point[0]), int(point[1]), marker,
                     markersize = size, color = rgb_value, lw=60,
                     label = label if i == 0 else "_nolegend_")
+
+class DensityPlot(BirdImage):
+    """ Specifically returns contrasted density plots from MATLAB outputs"""
+
+    def save(self, save_loc: str = ""):
+        """Saves a higher contrast version of the image"""
+        scaled_data = self.data * int(np.floor((255 / np.amax(self.data))))
+        im = Image.fromarray(scaled_data)
+        im.save(save_loc)
+
