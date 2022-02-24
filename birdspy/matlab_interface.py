@@ -44,15 +44,16 @@ class MatlabInterface:
         df_img = annotation_df.loc[annotation_df["image_id"] == image_id]
         annotations = df_img[["cluster_x", "cluster_y"]].values
         if np.isnan(annotations).any():
-            print(f"Nan value in image {image_id}, no truth matrix")
             if save_empty_file:
+                print(f"Nan value in image {image_id}, saving empty matrix")
                 annotations = []
             else:
-                return
+                return False
 
         save_name = str(image_id.split(".")[0]) + ".mat"
         save_path = os.path.join(save_loc, save_name)
         scipy.io.savemat(save_path, {"values": annotations})
+        return True
 
 
 # MatlabInterface.ground_truth_conversion("test/")

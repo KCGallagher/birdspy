@@ -8,9 +8,6 @@ dots(out,1) = size(im,2);
 out = dots(:,2)>size(im,1);
 dots(out,2) = size(im,1);
 
-disp(size(annot))
-disp(dots(:,2))
-disp(dots(:,1))
 annot(sub2ind(size(annot), dots(:,2), dots(:,1))) = 1;
 density = vl_imsmooth(annot,sigma);
 
