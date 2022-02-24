@@ -45,4 +45,4 @@ class MatlabInterface:
         scipy.io.savemat(save_path, {"values": annotations})
 
 
-MatlabInterface.ground_truth_conversion("test/")
+# MatlabInterface.ground_truth_conversion("test/")
