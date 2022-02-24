@@ -31,7 +31,9 @@ class MatlabInterface:
             MatlabInterface.save_truth_mat(image, annotation_df, save_loc)
 
     @staticmethod
-    def save_truth_mat(image_id: str, annotation_df: pd.DataFrame, save_loc: str, save_empty_file = True):
+    def save_truth_mat(
+        image_id: str, annotation_df: pd.DataFrame, save_loc: str, save_empty_file=True
+    ):
         """Save truth matrix from image_id, and dataframe of all annotations
         
         In the form of a Nx2 matrix, with (:,1) being the X coordinates 

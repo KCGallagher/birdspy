@@ -18,7 +18,9 @@ class DatasetFactory:
     """
 
     @staticmethod
-    def generate_datasets(train_path: str, test_path: str, image_path: str, test_frac: int):
+    def generate_datasets(
+        train_path: str, test_path: str, image_path: str, test_frac: int
+    ):
         """Generates training and testing datasets at the specified locations, from a given 
         directory of images. Places 1 in n images into the testing dataset randomly.
 
@@ -35,16 +37,19 @@ class DatasetFactory:
 
             if not DatasetFactory.check_image(image, annotation_df):
                 continue
-
-            copy_loc = (test_path if (np.random.rand() < (1 / test_frac)) else train_path)
+            copy_loc = test_path if (np.random.rand() < (1 / test_frac)) else train_path
             shutil.copy(os.path.join(image_path, image), copy_loc)
 
             # Also generate .mat ground truth to go along with the image
-            bs.MatlabInterface.save_truth_mat(image, annotation_df, copy_loc, save_empty_file=True)
-    
+            bs.MatlabInterface.save_truth_mat(
+                image, annotation_df, copy_loc, save_empty_file=True
+            )
+
     def check_image(image_id, annotation_df):
         """Checks whether image is valid, and has annotations,returning validity boolean"""
         image_df = annotation_df.loc[annotation_df["image_id"] == image_id]
-        if len(image_df) <= 0:  # Set minimum threshold for number of annotations required in image
+        if (
+            len(image_df) <= 0
+        ):  # Set minimum threshold for number of annotations required in image
             return False
         return True
