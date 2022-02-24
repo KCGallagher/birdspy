@@ -39,6 +39,12 @@ images/**
 counting_birds/data/**
 Counting_MATLAB_package_birds/bird_data/**
 
+# But include non-identifiable results
+!Counting_MATLAB_package_birds\bird_data\output\log.pdf
+!Counting_MATLAB_package_birds\bird_data\output\regressor_512.mat
+!Counting_MATLAB_package_birds\bird_data\output\Results.mat
+!Counting_MATLAB_package_birds\bird_data\output\dict_512.mat
+
 # Annotation data
 annotations/**
 
