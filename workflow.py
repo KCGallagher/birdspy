@@ -1,17 +1,18 @@
 #
 # Example workflows for both models
 #
+
 import os
 
 import birdspy as bs
 
-# Model 1
+# MESA Distance
 
 # Save MATLAB ground-truth image files
 # bs.ImageFactory.ground_truth_factory("mesa_distance/data/")
 
 
-# Model 2
+# Ridge Regression
 
 # Generate training and testing datasets
 for sub_folder in ["HVITa2016a_renamed", "HVITa2016b_renamed"]:
@@ -21,4 +22,3 @@ for sub_folder in ["HVITa2016a_renamed", "HVITa2016b_renamed"]:
         image_path=os.path.join("images", "HVITa_renamed", sub_folder),
         test_frac=8,
     )
-
