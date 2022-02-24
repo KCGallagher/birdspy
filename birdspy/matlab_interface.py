@@ -54,6 +54,3 @@ class MatlabInterface:
         save_path = os.path.join(save_loc, save_name)
         scipy.io.savemat(save_path, {"values": annotations})
         return True
-
-
-# MatlabInterface.ground_truth_conversion("test/")

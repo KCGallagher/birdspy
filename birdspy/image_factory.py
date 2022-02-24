@@ -58,5 +58,3 @@ class ImageFactory:
         else:
             annotation_path = "annotations/HVITa_goldstandard_kadult.csv"
         return pd.read_csv(annotation_path)
-
-#ImageFactory.ground_truth_factory("counting_birds/data/")

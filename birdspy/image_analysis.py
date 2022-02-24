@@ -87,4 +87,3 @@ class DensityPlot(BirdImage):
         scaled_data = self.data * int(np.floor((255 / np.amax(self.data))))
         im = Image.fromarray(scaled_data)
         im.save(save_loc)
-
