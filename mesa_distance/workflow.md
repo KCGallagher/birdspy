@@ -35,3 +35,7 @@ We subselect the year 2016 - the majority of our dataset was from this year anyw
 ```python
 annotation_df = annotation_df.loc[annotation_df['cam_id'].str.startswith('HVITa2016')]
 ```
+
+## Run Model
+
+The main model is contained within the `BirdCounting.m` file, and can be ran directly from there.
