@@ -43,3 +43,24 @@ N.B The learning procedure calls methods from MATLAB's optimization toolbox whic
 
 ## Model 2
 
+Based on code from C. Arteta, V. Lempitsky, J. A. Noble, A. Zisserman , from [Interactive Object Counting](https://www.robots.ox.ac.uk/~vgg/publications/2014/Arteta14/).
+
+Again VLFeat will need to be installed, following the options above. The pylon inference code will also require you to run `Counting_MATLAB_package/PylonCode/pylonSetup.m` from the `PylonCode` directory before use.
+
+You will then need to populate the `test` and `train` folders with your datasets, and annotations. These can be imported/generated automatically using the `birdspy` workflow, with the following command:
+
+```python
+for sub_folder in ["HVITa2016a_renamed", "HVITa2016b_renamed"]:
+    bs.DatasetFactory.generate_datasets(
+        train_path=os.path.join("Counting_MATLAB_package_birds", "bird_data", "train"),
+        test_path=os.path.join("Counting_MATLAB_package_birds", "bird_data", "test"),
+        image_path=os.path.join("images", "HVITa_renamed", sub_folder),
+        test_frac=8,
+    )
+```
+
+where you can iterate over all directories you want to search for images in. Importing the data in this was will also allow automatic generation of the image database (IMDB).
+
+The configuration of the learning algorithm is done in `getDataInfo.m`, and it consists of setting the relevant paths (e.g. paths to raw data, annotations, models, etc.), and the different training and testing parameters.
+
+After a session of training is complete, the trained model is stored in the `output` (set in `getDataInfo.m`), and consists of two '.mat' files.
