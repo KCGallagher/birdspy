@@ -11,7 +11,7 @@ if ~exist(d.exppath,'dir')
 end
 
 %---------------------------------------------------------Input Information
-d.objSize = 50; %Rough size of the object in the input images
+d.objSize = 80; %Rough size of the object in the input images
 d.imExt = 'jpg'; %image extension, png, jpg, etc...
 
 %------------------------------------------------------------Output options
