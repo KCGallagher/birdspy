@@ -37,7 +37,7 @@ import birdspy as bs
 bs.ImageFactory.ground_truth_factory("MESA_distance/data/")
 ```
 
-specifying the location you want to read in your data from (this is the default). You can then run the MATLAB script `counting_birds/BirdCounting.m`. It may be necessaary to change the iteration limits and file paths there - the default option trains on the first 16 images and tests on the second 16.
+specifying the location you want to read in your data from (this is the default). You can then run the MATLAB script `MESA_distance/BirdCounting.m`. It may be necessaary to change the iteration limits and file paths there - the default option trains on the first 16 images and tests on the second 16.
 
 This script generates the dense SIFT descriptors from a random weighted matrix, but it is preferred to pass a precomputed SIFT codebook for this dataset using VLFeat.
 
@@ -47,15 +47,15 @@ N.B The learning procedure calls methods from MATLAB's optimization toolbox whic
 
 Based on code from C. Arteta, V. Lempitsky, J. A. Noble, A. Zisserman , from [Interactive Object Counting](https://www.robots.ox.ac.uk/~vgg/publications/2014/Arteta14/).
 
-Again VLFeat will need to be installed, following the options above. The pylon inference code will also require you to run `Counting_MATLAB_package/PylonCode/pylonSetup.m` from the `PylonCode` directory before use.
+Again VLFeat will need to be installed, following the options above. The pylon inference code will also require you to run `ridge_regression/PylonCode/pylonSetup.m` from the `PylonCode` directory before use.
 
-You will then need to populate the `test` and `train` folders with your datasets, and annotations. These can be imported/generated automatically using the `birdspy` workflow, with the following command:
+You will then need to populate the `test` and `train` folders with your datasets, and annotations. These can be imported/generated automatically using the `birdspy` workflow, with the following command (replacing directory names with those on your local system):
 
 ```python
 for sub_folder in ["HVITa2016a_renamed", "HVITa2016b_renamed"]:
     bs.DatasetFactory.generate_datasets(
-        train_path=os.path.join("Counting_MATLAB_package_birds", "bird_data", "train"),
-        test_path=os.path.join("Counting_MATLAB_package_birds", "bird_data", "test"),
+        train_path=os.path.join("ridge_regression", "bird_data", "train"),
+        test_path=os.path.join("ridge_regression", "bird_data", "test"),
         image_path=os.path.join("images", "HVITa_renamed", sub_folder),
         test_frac=8,
     )

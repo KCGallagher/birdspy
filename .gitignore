@@ -37,7 +37,7 @@ ipython_config.py
 # Image directories
 images/**
 MESA_distance/data/**
-Counting_MATLAB_package_birds/bird_data/**
+ridge_regression/bird_data/**
 
 # Annotation data
 annotations/**
