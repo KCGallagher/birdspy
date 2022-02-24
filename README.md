@@ -1,6 +1,6 @@
 # BirdSpy
 
-Deep learning tool for automated detection of artic birds from time-lapse camera images. Uses data from the Citizen Science project [SeaBird Watch](https://www.zooniverse.org/projects/penguintom79/seabirdwatch).
+Deep learning tool for automated detection of artic birds from time-lapse camera images. I have used data from the Citizen Science project [SeaBird Watch](https://www.zooniverse.org/projects/penguintom79/seabirdwatch) for which I am very grateful. As I have no ownership over this data, I am unable however to publish it within this repository.
 
 ## CNN Framework
 
