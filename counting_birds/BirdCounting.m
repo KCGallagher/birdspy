@@ -102,11 +102,11 @@ for j=1:32-nTrain %change8_32
    
    %estimating the densities w.r.t. the models
    estDensity1 = wL1(testFeatures{j}).*testWeights{j};
-   imwrite(uint8(estDensity1), 'img1.png');
+   imwrite(estDensity1, 'img1.png');
    model1Count(j) = sum(estDensity1(:));   
    estDensity2 = wL2(testFeatures{j}).*testWeights{j};
    model2Count(j) = sum(estDensity2(:));
-   imwrite(uint8(estDensity2), 'img2_.png');
+   imwrite(estDensity2, 'img2_.png');
    
    fprintf('Image #%d: trueCount = %f, model1 predicted count = %f, model2 predicted count = %f...\n',...
        j+nTrain, trueCount(j), model1Count(j), model2Count(j));

@@ -7,6 +7,7 @@ results = zeros(nFrames,2); %[GTcount EstimatedCount];
 for f = 1:nFrames
   
   disp(['Testing on frame ' num2str(f) '/' num2str(nFrames)]);
+  disp([d.datapath,'test',[testData{f,1} '.' d.imExt]])
   
   orgIm = imread(fullfile(d.datapath,'test',[testData{f,1} '.' d.imExt]));
   orgImSz = size(orgIm);
