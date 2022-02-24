@@ -29,7 +29,7 @@ if exist('features_BIRD_IMAGES.mat')
     disp('Loading features precomputed at previous run');
     load('features_BIRD_IMAGES.mat','features','weights','gtDensities');
 else
-    for j=1:32 %change8_32
+    for j=1:32 
         disp(['Processing image #' num2str(j) ' (out of 32)...']);
         im = imread(['data/HVITa2016a_' num2str(j, '%06d') '.jpg']);
         im = im(:,:,3); %using the blue channel to compute data
@@ -65,7 +65,7 @@ end
 disp('Mexifying MaxSubarray procedure');
 mex maxsubarray2D.cpp
 
-nTrain = 16; %change4_16
+nTrain = 16; 
 trainFeatures = features(1:nTrain);
 trainWeights = weights(1:nTrain);
 trainGtDensities = gtDensities(1:nTrain);
@@ -88,7 +88,7 @@ disp('--------------');
 wL2 = LearnToCount(nFeatures, trainFeatures, trainWeights, ...
         weightMap, trainGtDensities, 0.01/nTrain, maxIter, verbose);
 
-trueCount = zeros(32-nTrain,1);  %change8_32
+trueCount = zeros(32-nTrain,1);  
 model1Count = zeros(32-nTrain,1);
 model2Count = zeros(32-nTrain,1);
 
@@ -97,16 +97,16 @@ testFeatures = features(nTrain+1:end);
 testWeights = weights(nTrain+1:end);
 testGtDensities = gtDensities(nTrain+1:end);
 
-for j=1:32-nTrain %change8_32
+for j=1:32-nTrain 
    trueCount(j) = sum(testGtDensities{j}(:));
    
    %estimating the densities w.r.t. the models
    estDensity1 = wL1(testFeatures{j}).*testWeights{j};
-   imwrite(estDensity1, 'img1.png');
+   %imwrite(estDensity1, 'DensityPlot1.png');  % Example density plots
    model1Count(j) = sum(estDensity1(:));   
    estDensity2 = wL2(testFeatures{j}).*testWeights{j};
    model2Count(j) = sum(estDensity2(:));
-   imwrite(estDensity2, 'img2_.png');
+   %imwrite(estDensity2, 'DensityPlot2.png');
    
    fprintf('Image #%d: trueCount = %f, model1 predicted count = %f, model2 predicted count = %f...\n',...
        j+nTrain, trueCount(j), model1Count(j), model2Count(j));

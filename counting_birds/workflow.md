@@ -19,6 +19,7 @@ When only obtaining a list of the image IDs, to subsequently iterate through, we
 ```python
 images_ids = np.unique(df['image_id'])
 ```
+
 Note that this may include images that have been marked as having no birds, these could be removed using:
 
 ```python
