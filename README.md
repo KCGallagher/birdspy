@@ -65,4 +65,8 @@ where you can iterate over all directories you want to search for images in. Imp
 
 The configuration of the learning algorithm is done in `getDataInfo.m`, and it consists of setting the relevant paths (e.g. paths to raw data, annotations, models, etc.), and the different training and testing parameters. It can subsequently be ran from the `main.m` file.
 
-After a session of training is complete, the trained model is stored in the `output` (set in `getDataInfo.m`), and consists of two '.mat' files.
+After a session of training is complete, the trained model is stored in the `output` (set in `getDataInfo.m`), and consists of two '.mat' files. This can be saved to a .csv file using:
+
+```python
+bs.OutputWriter.write_csv("ridge_regression/bird_data/output", "output.csv")
+```

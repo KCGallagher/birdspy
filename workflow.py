@@ -27,3 +27,9 @@ for sub_folder in [
         image_path=os.path.join("images", "HVITa_renamed", sub_folder),
         test_frac=8,
     )
+
+# Print output files as .csv
+# This currently only returns count per image, but could threshold object density 
+# to return bird locations in the future
+
+# bs.OutputWriter.write_csv("ridge_regression/bird_data/output", "output.csv")
