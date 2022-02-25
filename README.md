@@ -63,6 +63,6 @@ for sub_folder in ["HVITa2016a_renamed", "HVITa2016b_renamed"]:
 
 where you can iterate over all directories you want to search for images in. Importing the data in this was will also allow automatic generation of the image database (IMDB).
 
-The configuration of the learning algorithm is done in `getDataInfo.m`, and it consists of setting the relevant paths (e.g. paths to raw data, annotations, models, etc.), and the different training and testing parameters.
+The configuration of the learning algorithm is done in `getDataInfo.m`, and it consists of setting the relevant paths (e.g. paths to raw data, annotations, models, etc.), and the different training and testing parameters. It can subsequently be ran from the `main.m` file.
 
 After a session of training is complete, the trained model is stored in the `output` (set in `getDataInfo.m`), and consists of two '.mat' files.
