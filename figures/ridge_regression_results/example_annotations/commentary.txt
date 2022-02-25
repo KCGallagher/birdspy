@@ -1,0 +1,9 @@
+The examples in this file give a summary of the annotation results, and demonstrate the capabilities of this method, but also some of the limitations.
+
+Images 93 and 1880 give a good example of accurate annotations, with few false positives.
+
+Image 252 also demonstrates some capability of the algorithm to differentiate between adults and chicks, with the latter not being labelled in this dataset.
+
+Image 1885 shows the issues with snowy regions, as patches of snow can be misidentified as birds head, and so increase the number of false positives. This also occurs frequently in bright sublight/high contrast photos, whereas false negatives or more likely in shade/low contrast photos.
+
+ 
