@@ -4,6 +4,9 @@ V. Lempitsky, A. Vedaldi, and A. Zisserman
 A PYLON MODEL FOR SEMANTIC SEGMENTATION.
 Advances in Neural Information Processing Systems (NIPS), Granada, 2011.
 
+Functions from this archive are subsequently utilised in the iage processing of the bird image dataset, 
+but the entire archive is provided for completeness and generality.
+
 //////////////////////////
 
 QUICK START:
