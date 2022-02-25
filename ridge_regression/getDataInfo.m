@@ -31,7 +31,7 @@ d.dictSamples = 2e6;
 d.dictSize = 512;
 
 %image resizing
-d.targScale = 2;
+d.targScale = 3;
 d.sFactor = d.targScale/d.objSize;
 d.cropSize = ceil(d.targScale/4);
 

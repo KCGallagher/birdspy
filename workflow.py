@@ -15,10 +15,15 @@ import birdspy as bs
 # Ridge Regression
 
 # Generate training and testing datasets
-for sub_folder in ["HVITa2016a_renamed", "HVITa2016b_renamed"]:
+for sub_folder in [
+    "HVITa2016a_renamed",
+    "HVITa2016b_renamed",
+    "HVITa2016c_renamed",
+    "HVITa2016d_renamed",
+]:
     bs.DatasetFactory.generate_datasets(
-        train_path=os.path.join("Counting_MATLAB_package_birds", "bird_data", "train"),
-        test_path=os.path.join("Counting_MATLAB_package_birds", "bird_data", "test"),
+        train_path=os.path.join("ridge_regression", "bird_data", "train"),
+        test_path=os.path.join("ridge_regression", "bird_data", "test"),
         image_path=os.path.join("images", "HVITa_renamed", sub_folder),
         test_frac=8,
     )
